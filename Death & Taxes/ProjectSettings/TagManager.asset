@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Black
+    uniqueID: 4104329315
+    locked: 0
+  - name: Ground
+    uniqueID: 3243593921
+    locked: 0
+  - name: Front Wall
+    uniqueID: 1464742771
+    locked: 0
+  - name: Player
+    uniqueID: 1890424675
+    locked: 0
+  - name: Backwall
+    uniqueID: 482936637
+    locked: 0
