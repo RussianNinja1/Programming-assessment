@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(kBTime <= 0)
+        PlayerMovement();
+        /*if(kBTime <= 0)
         {
             PlayerMovement(); //movement goes here
         }
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
                 myRigidBody.velocity = new Vector2(kBForce, kBForce);
             }
             kBTime -= Time.deltaTime;
-        }
+        }*/
     }
     private void Flip() //function for fliping the sprite
     {

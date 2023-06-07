@@ -21,7 +21,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            playerMovement.kbTimer = playerMovement.kbTotalTime;
+            //playerMovement.kbTimer = playerMovement.kbTotalTime;
             other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageToGive);
         }
     }
