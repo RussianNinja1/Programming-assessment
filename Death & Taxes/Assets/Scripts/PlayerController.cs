@@ -8,14 +8,20 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movement")]
     public float moveSpeed = 5f;
     private float currentMoveSpeed;
     public float diagonalMoveModif;
     private Animator anim;
     private Rigidbody2D myRigidBody;
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
-    
-    
+
+    [Header("Knockback")]
+    [SerializeField] private float kBForce;
+    [SerializeField] private float kBTime;
+    [SerializeField] private float KBTotalTime;
+    public bool knockFromRight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +36,10 @@ public class PlayerController : MonoBehaviour
         float movementInputX = Input.GetAxisRaw("Horizontal");
         float movementInputY = Input.GetAxisRaw("Vertical");
 
+        /*if(kBTime <= 0)
+        {
+
+        }*/
         //Code for Moving Horizontally
         if (movementInputX > 0.5f)
         {
