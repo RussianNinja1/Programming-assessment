@@ -5,6 +5,7 @@ using UnityEngine;
 public class HurtPlayer : MonoBehaviour
 {
     public int damageToGive;
+    public PlayerController playerMovement;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
+            playerMovement.kbTimer = playerMovement.kbTotalTime;
             other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageToGive);
         }
     }

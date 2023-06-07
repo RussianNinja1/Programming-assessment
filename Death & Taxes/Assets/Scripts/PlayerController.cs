@@ -1,5 +1,3 @@
-     using JetBrains.Annotations;
-using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
@@ -17,9 +15,9 @@ public class PlayerController : MonoBehaviour
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
 
     [Header("Knockback")]
-    [SerializeField] private float kBForce;
-    [SerializeField] private float kBTime;
-    [SerializeField] private float KBTotalTime;
+    public float kBForce;
+    public float kBTime;
+    public float KBTotalTime;
     public bool knockFromRight;
 
     // Start is called before the first frame update
@@ -32,14 +30,39 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(kBTime <= 0)
+        {
+            PlayerMovement(); //movement goes here
+        }
+        else
+        {
+            if(knockFromRight == true)
+            {
+                myRigidBody.velocity = new Vector2(-kBForce,kBForce);
+            }
+            if (knockFromRight == false)
+            {
+                myRigidBody.velocity = new Vector2(kBForce, kBForce);
+            }
+            kBTime -= Time.deltaTime;
+        }
+    }
+    private void Flip() //function for fliping the sprite
+    {
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
+
+        // Multiply the player's x local scale by -1.
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
+    private void PlayerMovement()
+    {
         // Setting neat variables for X/Y RawAxis
         float movementInputX = Input.GetAxisRaw("Horizontal");
         float movementInputY = Input.GetAxisRaw("Vertical");
-
-        /*if(kBTime <= 0)
-        {
-
-        }*/
         //Code for Moving Horizontally
         if (movementInputX > 0.5f)
         {
@@ -74,33 +97,23 @@ public class PlayerController : MonoBehaviour
             myRigidBody.velocity = new Vector2(0f, myRigidBody.velocity.y);
         }
 
-         if (movementInputY < 0.5f && movementInputY > -0.5f)
+        if (movementInputY < 0.5f && movementInputY > -0.5f)
         {
-            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x,0f);
+            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0f);
         }
 
-         //code to adjust diagonal movespeed
-         if (Mathf.Abs (movementInputX) > 0.5f && Mathf.Abs (movementInputY) > 0.5f)
+        //code to adjust diagonal movespeed
+        if (Mathf.Abs(movementInputX) > 0.5f && Mathf.Abs(movementInputY) > 0.5f)
         {
             currentMoveSpeed = moveSpeed * diagonalMoveModif;
         }
-         else
+        else
         {
             currentMoveSpeed = moveSpeed;
         }
 
-       // Allows the move controls to talk to the animator
-       anim.SetFloat("Move+", Input.GetAxisRaw("Horizontal"));
-       anim.SetFloat("Move-", Input.GetAxisRaw("Vertical"));
-    }
-    private void Flip() //function for fliping the sprite
-    {
-        // Switch the way the player is labelled as facing.
-        m_FacingRight = !m_FacingRight;
-
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        // Allows the move controls to talk to the animator
+        anim.SetFloat("Move+", Input.GetAxisRaw("Horizontal"));
+        anim.SetFloat("Move-", Input.GetAxisRaw("Vertical"));
     }
 }
