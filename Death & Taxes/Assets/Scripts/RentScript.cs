@@ -11,7 +11,7 @@ public class RentScript : MonoBehaviour
     public int value;
     public MoneyManager theMM;
     public TMP_Text effectText;
-    public TMP_Text rentText;
+    public TMP_Text rentText; //can be potentially removed?
     public int currentDue = 0;
     public int totalDue = 100;
     public Button nextDayBotton;
