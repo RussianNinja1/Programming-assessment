@@ -13,11 +13,8 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] private int NumOfFlashes; // number of flashes
     private SpriteRenderer spriteRend;
 
-    [Header("Knockback")]
-    [SerializeField] private float kBForce;
-    [SerializeField] private float kBTime;
-    [SerializeField] private float KBTotalTime;
-    public bool knockFromRight;
+ 
+
     // Start is called before the first frame update
     void Start()
     {

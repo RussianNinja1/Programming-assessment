@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,12 +14,15 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D myRigidBody;
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
+    
+    //public GameObject hazardThatKnocks;
 
     [Header("Knockback")]
-    public float kBForce;
-    public float kBTime;
-    public float KBTotalTime;
-    public bool knockFromRight;
+
+    [SerializeField] private bool knockedbacked;
+    [SerializeField] private float strength = 100
+        , delay = 2f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,23 +34,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMovement();
-        /*if(kBTime <= 0)
+        if(!knockedbacked)
         {
-            PlayerMovement(); //movement goes here
+            PlayerMovement();
         }
-        else
-        {
-            if(knockFromRight == true)
-            {
-                myRigidBody.velocity = new Vector2(-kBForce,kBForce);
-            }
-            if (knockFromRight == false)
-            {
-                myRigidBody.velocity = new Vector2(kBForce, kBForce);
-            }
-            kBTime -= Time.deltaTime;
-        }*/
     }
     private void Flip() //function for fliping the sprite
     {
@@ -58,7 +49,26 @@ public class PlayerController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            knockedbacked = true;
+            Vector2 direction = (transform.position - other.transform.position).normalized;
+            Vector2 knockback = (direction * strength);
+            myRigidBody.AddForce(knockback, ForceMode2D.Impulse);
+            StartCoroutine(Reset());
+            Debug.Log("I Should be getting knocked back now");
+        }
+    }
 
+    private IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(delay);
+        //myRigidBody.velocity = Vector3.zero;
+        knockedbacked = false;
+        Debug.Log("The Enum is running");
+    }
     private void PlayerMovement()
     {
         // Setting neat variables for X/Y RawAxis
