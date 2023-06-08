@@ -1393,6 +1393,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5507527566551411139, guid: 6a915b68d55a1964ea034119eec4006d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507527566551411139, guid: 6a915b68d55a1964ea034119eec4006d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 151017448}
@@ -1401,11 +1405,19 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5507527566551411139, guid: 6a915b68d55a1964ea034119eec4006d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507527566551411139, guid: 6a915b68d55a1964ea034119eec4006d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlusGold
       objectReference: {fileID: 0}
     - target: {fileID: 5507527566551411139, guid: 6a915b68d55a1964ea034119eec4006d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RentScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507527566551411139, guid: 6a915b68d55a1964ea034119eec4006d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: RentScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5507527566551411139, guid: 6a915b68d55a1964ea034119eec4006d, type: 3}
