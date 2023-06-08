@@ -49,7 +49,8 @@ public class PlayerController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    void OnCollisionEnter2D(Collision2D other)
+
+    void OnCollisionEnter2D(Collision2D other) //knockback script.
     {
         if(other.gameObject.tag == "Enemy")
         {
@@ -58,22 +59,22 @@ public class PlayerController : MonoBehaviour
             Vector2 knockback = (direction * strength);
             myRigidBody.AddForce(knockback, ForceMode2D.Impulse);
             StartCoroutine(Reset());
-            Debug.Log("I Should be getting knocked back now");
+            //Debug.Log("I Should be getting knocked back now");
         }
     }
 
-    private IEnumerator Reset()
+    private IEnumerator Reset()  //Enum to reset knockback, and delay timer.
     {
         yield return new WaitForSeconds(delay);
-        //myRigidBody.velocity = Vector3.zero;
         knockedbacked = false;
-        Debug.Log("The Enum is running");
+        //Debug.Log("The Enum is running");
     }
     private void PlayerMovement()
     {
         // Setting neat variables for X/Y RawAxis
         float movementInputX = Input.GetAxisRaw("Horizontal");
         float movementInputY = Input.GetAxisRaw("Vertical");
+
         //Code for Moving Horizontally
         if (movementInputX > 0.5f)
         {

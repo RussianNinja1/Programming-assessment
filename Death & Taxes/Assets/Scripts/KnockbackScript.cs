@@ -13,9 +13,9 @@ public class KnockbackScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         //if (other.gameObject.tag == "Player")
-        {
-       //     other.gameObject.GetComponent<PlayerController>().KnockBack();
-        }
+        //{
+        //   other.gameObject.GetComponent<PlayerController>().KnockBack();
+        //}
            
     }
     //private IEnumerator Reset()
