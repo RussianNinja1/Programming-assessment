@@ -21,18 +21,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            //playerMovement.kBTime = playerMovement.KBTotalTime; 
-            //if(other.transform.position.x <= transform.position.x)
-            //{
-            //    playerMovement.knockFromRight = true;
-            //    Debug.Log("I got knocked from left");
-            //}
-            //if (other.transform.position.x >= transform.position.x)
-            //{
-            //    playerMovement.knockFromRight = false;
-            //    Debug.Log("I got knocked from right");
-            //}
-            other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageToGive);
+            other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageToGive); // calls the hurt player function on collision, damage is set in inspection thanks to public variable. 
         }
     }
 }

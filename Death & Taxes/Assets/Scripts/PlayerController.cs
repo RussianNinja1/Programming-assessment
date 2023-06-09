@@ -15,13 +15,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D myRigidBody;
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
     
-    //public GameObject hazardThatKnocks;
 
     [Header("Knockback")]
 
     [SerializeField] private bool knockedbacked;
-    [SerializeField] private float strength = 100
-        , delay = 2f;
+    [SerializeField] private float strength = 100;
+    [SerializeField] private float delay = 2f;
 
 
     // Start is called before the first frame update

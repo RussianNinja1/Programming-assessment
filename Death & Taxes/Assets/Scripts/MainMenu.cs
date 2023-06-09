@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(Day0);
+        PlayerPrefs.SetInt("CurrentMoney", 0);
     }
 
     public void OpenOptions()

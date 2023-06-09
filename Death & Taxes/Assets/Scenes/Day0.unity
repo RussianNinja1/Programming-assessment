@@ -269,6 +269,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6983311410777644633, guid: 69657c89fd08b9146b3221e21619d5fe, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983311410777644633, guid: 69657c89fd08b9146b3221e21619d5fe, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983311410777644633, guid: 69657c89fd08b9146b3221e21619d5fe, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6983311410777644635, guid: 69657c89fd08b9146b3221e21619d5fe, type: 3}
       propertyPath: m_Name
       value: Coin (1)

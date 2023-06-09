@@ -11,6 +11,7 @@ public class ShiftTimer : MonoBehaviour
     float currentTime = 0f; 
     public float startingTime = 10f;
     [SerializeField] TMP_Text timerText; //addresses the text component in the the timer
+    
     // Start is called before the first frame update
     void Start()
     {
