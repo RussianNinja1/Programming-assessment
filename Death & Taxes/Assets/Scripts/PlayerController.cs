@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D myRigidBody;
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
+    public bool canMove;
     
 
     [Header("Knockback")]
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -73,6 +75,12 @@ public class PlayerController : MonoBehaviour
         // Setting neat variables for X/Y RawAxis
         float movementInputX = Input.GetAxisRaw("Horizontal");
         float movementInputY = Input.GetAxisRaw("Vertical");
+
+        if (!canMove)
+        {
+            myRigidBody.velocity = Vector2.zero;
+            return;
+        }
 
         //Code for Moving Horizontally
         if (movementInputX > 0.5f)

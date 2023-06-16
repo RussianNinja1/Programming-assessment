@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealthManager : MonoBehaviour
@@ -13,6 +14,11 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] private int NumOfFlashes; // number of flashes
     private SpriteRenderer spriteRend;
 
+    [Header("Time Penelty On Death")]
+    public ShiftTimer sTime;
+    public int timeDamageValue;
+    //private ShiftTimer timeDamage;
+
  
 
     // Start is called before the first frame update
@@ -20,6 +26,8 @@ public class PlayerHealthManager : MonoBehaviour
     {
         playerCurrentHealth = playerMaxHealth;  //sets current health to max health (aka full health on start)
         spriteRend = GetComponent<SpriteRenderer>();
+        sTime = FindObjectOfType<ShiftTimer>();
+
     }
 
     // Update is called once per frame
@@ -27,7 +35,17 @@ public class PlayerHealthManager : MonoBehaviour
     {
         if(playerCurrentHealth <=0) // if player health is less then or = to 0 deactivate the player object
         {
-            gameObject.SetActive(false);
+            spriteRend.enabled = false;
+            Debug.Log("i am now set active false");
+            sTime.TimeDamage(timeDamageValue);
+            Debug.Log("i should have done damage  to time");
+            gameObject.transform.position = new Vector3(0, 0, 0);
+            Debug.Log("i should have moved to start");
+            SetMaxHealth(); 
+            Debug.Log("i should have set health to make");
+            spriteRend.enabled = true;
+            Debug.Log("i should have set active to true");
+
         }
     }
     public void HurtPlayer(int damageToGive)  //public funtions to that gets called on other script, with arguments that you can set to do different damage if needed

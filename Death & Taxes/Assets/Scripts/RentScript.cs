@@ -14,7 +14,7 @@ public class RentScript : MonoBehaviour
     public int currentDue = 0;
     public int totalDue = 100;
     public Button nextDayBotton;
-    
+    public string gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -61,5 +61,9 @@ public class RentScript : MonoBehaviour
     public void NextDay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void surrender()
+    {
+        SceneManager.LoadScene(gameOver);
     }
 }

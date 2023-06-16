@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using JetBrains.Annotations;
+using Newtonsoft.Json.Bson;
 
 public class ShiftTimer : MonoBehaviour
 {
@@ -11,18 +13,28 @@ public class ShiftTimer : MonoBehaviour
     float currentTime = 0f; 
     public float startingTime = 10f;
     [SerializeField] TMP_Text timerText; //addresses the text component in the the timer
-    
+    private DialogueManager dMan;
+    public bool timeActive;
+
     // Start is called before the first frame update
     void Start()
     {
+        timeActive = false;
         currentTime = startingTime; //set current time to starting time ( amount of time to complete level).
+        dMan = FindObjectOfType<DialogueManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentTime -= 1 * Time.deltaTime; // decreases time by 1 each second
-        timerText.text = currentTime.ToString("0"); //writes time to Timer text
+        if(timeActive)
+        {
+            if (!dMan.DialogActive && timeActive ==true)
+            {
+                currentTime -= 1 * Time.deltaTime; // decreases time by 1 each second
+                timerText.text = currentTime.ToString("0"); //writes time to Timer text
+            }
+        } 
 
         if (currentTime <=0)  // loads next scene
         {
@@ -31,4 +43,11 @@ public class ShiftTimer : MonoBehaviour
         }
        
     }
+    public void TimeDamage(int timeDamageValue)
+    {
+        currentTime -= timeDamageValue;
+    }
+     
+
+
 }

@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public Slider healthBar;
     public PlayerHealthManager playerHealth;
+
     // Start is called before the first frame update
     void Start()
     {
