@@ -149,7 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToGive: 1
   playerMovement: {fileID: 0}
-  player: {fileID: 1701237737696127870, guid: 04cfa456b52d2ea49a133fe146172614, type: 3}
 --- !u!114 &8956288138685122532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 2
-  animRunTime: 0.833
+  animRunTime: 1.167
 --- !u!50 &8956288139842394376
 Rigidbody2D:
   serializedVersion: 4
