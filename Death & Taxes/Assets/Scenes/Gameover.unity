@@ -2679,6 +2679,8 @@ CompositeCollider2D:
         Y: -79999900
       - X: 313125111
         Y: -79999900
+      - X: 313437604
+        Y: -78125008
       - X: 313750115
         Y: -76250012
       - X: 313750116
@@ -2825,6 +2827,8 @@ CompositeCollider2D:
         Y: -49999900
       - X: 673125111
         Y: -49999900
+      - X: 673437604
+        Y: -48125008
       - X: 673750115
         Y: -46250012
       - X: 673750116
@@ -3901,6 +3905,8 @@ CompositeCollider2D:
         Y: -79999900
       - X: 163125111
         Y: -79999900
+      - X: 163437596
+        Y: -78125008
       - X: 163750099
         Y: -76250012
       - X: 163750100
@@ -25312,6 +25318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingTime: 120
   timerText: {fileID: 1939370742}
+  timeActive: 0
 --- !u!114 &1407027228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25324,7 +25331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957e55531f6495f4a87b71fa65dc1c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: MainManu
+  mainMenu: Main Manu
   restart: Day1
 --- !u!1 &1592084752
 GameObject:

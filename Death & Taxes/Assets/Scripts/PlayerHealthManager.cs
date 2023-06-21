@@ -15,7 +15,7 @@ public class PlayerHealthManager : MonoBehaviour
     private SpriteRenderer spriteRend;
 
     [Header("Time Penelty On Death")]
-    public ShiftTimer sTime;
+    public ShiftTimer1 sTime;
     public int timeDamageValue;
     //private ShiftTimer timeDamage;
 
@@ -26,7 +26,7 @@ public class PlayerHealthManager : MonoBehaviour
     {
         playerCurrentHealth = playerMaxHealth;  //sets current health to max health (aka full health on start)
         spriteRend = GetComponent<SpriteRenderer>();
-        sTime = FindObjectOfType<ShiftTimer>();
+        sTime = FindObjectOfType<ShiftTimer1>();
 
     }
 
