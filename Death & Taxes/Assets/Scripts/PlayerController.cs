@@ -1,9 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D myRigidBody;
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
-    public bool canMove;
+    public bool canMove; // to prevent movement during dialogue
     
 
     [Header("Knockback")]
@@ -60,7 +56,6 @@ public class PlayerController : MonoBehaviour
             Vector2 knockback = (direction * strength);
             myRigidBody.AddForce(knockback, ForceMode2D.Impulse);
             StartCoroutine(Reset());
-            //Debug.Log("I Should be getting knocked back now");
         }
     }
 
@@ -68,7 +63,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         knockedbacked = false;
-        //Debug.Log("The Enum is running");
     }
     private void PlayerMovement()
     {
@@ -76,6 +70,7 @@ public class PlayerController : MonoBehaviour
         float movementInputX = Input.GetAxisRaw("Horizontal");
         float movementInputY = Input.GetAxisRaw("Vertical");
 
+        //if statement checking if you can move or not
         if (!canMove)
         {
             myRigidBody.velocity = Vector2.zero;

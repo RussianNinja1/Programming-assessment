@@ -1191,7 +1191,7 @@ MonoBehaviour:
   dialogueLines:
   - Oi!! Free Loader!
   - The Boss wants to see you!
-  - Use those W.A.S.D. -legs of yours.
+  - Use those W.A.S.D. legs of yours.
   - AND GET MOVING... all the way to the right.
 --- !u!61 &260093232
 BoxCollider2D:
@@ -4884,8 +4884,6 @@ CompositeCollider2D:
         Y: -79999900
       - X: 313125111
         Y: -79999900
-      - X: 313437604
-        Y: -78125008
       - X: 313750115
         Y: -76250012
       - X: 313750116
@@ -5032,8 +5030,6 @@ CompositeCollider2D:
         Y: -49999900
       - X: 673125111
         Y: -49999900
-      - X: 673437604
-        Y: -48125008
       - X: 673750115
         Y: -46250012
       - X: 673750116
@@ -6110,8 +6106,6 @@ CompositeCollider2D:
         Y: -79999900
       - X: 163125111
         Y: -79999900
-      - X: 163437596
-        Y: -78125008
       - X: 163750099
         Y: -76250012
       - X: 163750100
@@ -29708,9 +29702,9 @@ MonoBehaviour:
   dialogue: Coin
   dialogueLines:
   - OH NO!
-  - the coins are over there!
+  - The coins are over there!
   - I'm too scared to get them!
-  - I know i own you some money.
+  - I know I owe you some money.
   - These are special coins too they are worth 5 each, not like normal coins
   - They're yours if you want them!
 --- !u!61 &1822828849
