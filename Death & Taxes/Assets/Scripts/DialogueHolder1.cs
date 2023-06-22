@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueHolder1 : MonoBehaviour
@@ -18,11 +15,6 @@ public class DialogueHolder1 : MonoBehaviour
         sTime = FindObjectOfType<ShiftTimer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.gameObject.name == "Player")

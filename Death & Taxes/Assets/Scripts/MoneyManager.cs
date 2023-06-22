@@ -12,7 +12,7 @@ public class MoneyManager : MonoBehaviour
     {
         //PlayerPrefs.SetInt("CurrentMoney", 0);  // bootleg way to reset remembered gold value Need to delete when finished (delete this probably)
 
-        if (PlayerPrefs.HasKey("CurrentMoney"))
+        if (PlayerPrefs.HasKey("CurrentMoney")) // checks if there is a current money int saving in the player prefs, if not sets one
         {
             currentGold = PlayerPrefs.GetInt("CurrentMoney");
         }
@@ -29,7 +29,7 @@ public class MoneyManager : MonoBehaviour
     {
         
     }
-    public void AddMoney(int goldToAdd)
+    public void AddMoney(int goldToAdd) //updates saved money data, and writes to both player prefs and the text on screen
     {
         currentGold += goldToAdd;
         PlayerPrefs.SetInt("CurrentMoney", currentGold);
@@ -42,7 +42,7 @@ public class MoneyManager : MonoBehaviour
 
         if (currentGold >= 1)
         {
-            currentGold -= goldToGive;
+            currentGold -= goldToGive; //updates saved money data, and writes to both player prefs and the text on screen
             PlayerPrefs.SetInt("CurrentMoney", currentGold);
             moneyText.text = ":" + currentGold;
         }
