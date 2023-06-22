@@ -19,7 +19,10 @@ EditorBuildSettings:
     guid: 7a5c9640e0a11a84b8df84ccc2e49f48
   - enabled: 1
     path: Assets/Scenes/Rent1.unity
-    guid: 1e06cd456c501c844930a312ecdbf661
+    guid: 40fa167d64b630144b729433f074d3b0
+  - enabled: 1
+    path: Assets/Scenes/Day2.unity
+    guid: 9b9e8cb8f8e81694ca8d3b5640e1e0a5
   - enabled: 1
     path: Assets/Scenes/Gameover.unity
     guid: c1d6c686bdc037446b023c07a2814aae
