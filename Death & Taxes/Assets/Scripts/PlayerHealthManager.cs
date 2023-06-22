@@ -36,15 +36,11 @@ public class PlayerHealthManager : MonoBehaviour
         if(playerCurrentHealth <=0) // if player health is less then or = to 0 deactivate the player object
         {
             spriteRend.enabled = false;
-            Debug.Log("i am now set active false");
             sTime.TimeDamage(timeDamageValue);
-            Debug.Log("i should have done damage  to time");
             gameObject.transform.position = new Vector3(0, 0, 0);
-            Debug.Log("i should have moved to start");
             SetMaxHealth(); 
-            Debug.Log("i should have set health to make");
             spriteRend.enabled = true;
-            Debug.Log("i should have set active to true");
+            
 
         }
     }
